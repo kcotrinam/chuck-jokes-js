@@ -10,21 +10,32 @@ async function getJoke(category) {
   return json.value
 }
 
-async function showjoke(cat) {
+const displayJoke = async cat => {
   const jokeContainer = document.querySelector('.joke-container')
-    try {
-      const joke = await getJoke(`${cat}`)
-      jokeContainer.innerHTML = `${joke}`
-    } catch (e) {
-      jokeContainer.innerHTML = `Error: ${e}`
-    }
+
+  try {
+    const joke = await getJoke(`${cat}`)
+    jokeContainer.innerHTML = `${joke}`
+    storeJoke(joke)
+  } catch (e) {
+    jokeContainer.innerHTML = `Error: ${e}`
+  }
 }
 
 (function getCategory()  {
   const categoryList = document.querySelectorAll('.category-item')
   categoryList.forEach(item => {
-    item.addEventListener('click', e => {
-      showjoke(e.target.innerText)
-    });
+    item.addEventListener('click', () => {
+      displayJoke(item.innerText)
+    })
   })
 })()
+
+const storeJoke = (joke) => {
+  const saveButton = document.querySelector('#save')
+  saveButton.addEventListener('click', () => {
+    db.collection('starjokes').add ({
+      joke: joke
+    });
+  })
+}

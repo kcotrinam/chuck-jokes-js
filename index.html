@@ -4,6 +4,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
     <title>Chuck Norris Jokes</title>
   </head>
 
@@ -31,7 +33,25 @@
     <main>
       <div class="joke-container"></div>
     </main>
+    <button type="submit" class="save" id="save">Save Joke</button>
 
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAOHsclcp_WaGEmBOl5lZuL3-vGNQcai_Q",
+        authDomain: "chuckjoke-d3b9f.firebaseapp.com",
+        databaseURL: "https://chuckjoke-d3b9f.firebaseio.com",
+        projectId: "chuckjoke-d3b9f",
+        storageBucket: "chuckjoke-d3b9f.appspot.com",
+        messagingSenderId: "762686694544",
+        appId: "1:762686694544:web:1a15ac33303f9dab90e415"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore()
+      db.settings({timestampInSnapshots: true})
+    </script>
     <script src="assets/js/main.js"></script>
   </body>
 
