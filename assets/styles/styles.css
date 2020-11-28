@@ -1,0 +1,34 @@
+li {
+  list-style-type: none;
+}
+
+main,
+ul,
+.joke-container,
+.btn {
+  position: relative;
+}
+
+main {
+  background: url(../img/unnamed.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.joke-container {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+
+.fab {
+  font-size: 36px;
+  color: black;
+}
