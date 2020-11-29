@@ -10,45 +10,25 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
       integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/styles.css">
     <title>Chuck Norris Jokes</title>
-    <link rel="stylesheet" href="assets/styles/styles.css">
   </head>
 
   <body class="bg-success">
     <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand text-white" href="#">Chuck Menu</a>
-      <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-link text-white" href="assets/pages/collection.html">Best jokes</a>
+      <a class="nav-link text-white" href="../../index.html">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link text-white" href="#">Best jokes</a>
     </nav>
     <header class="w-100 bg-success">
       <h1 class="text-center p-3">
         Have Fun With Chuck Norris
       </h1>
     </header>
-    <main class="d-flex main">
-      <ul class="category d-flex flex-column p-2">
-        <li class="category-item btn btn-info mt-1">animal</li>
-        <li class="category-item btn btn-info mt-1">career</li>
-        <li class="category-item btn btn-info mt-1">celebrity</li>
-        <li class="category-item btn btn-info mt-1">dev</li>
-        <li class="category-item btn btn-info mt-1">explicit</li>
-        <li class="category-item btn btn-info mt-1">fashion</li>
-        <li class="category-item btn btn-info mt-1">food</li>
-        <li class="category-item btn btn-info mt-1">history</li>
-        <li class="category-item btn btn-info mt-1">money</li>
-        <li class="category-item btn btn-info mt-1">movie</li>
-        <li class="category-item btn btn-info mt-1">music</li>
-        <li class="category-item btn btn-info mt-1">political</li>
-        <li class="category-item btn btn-info mt-1">religion</li>
-        <li class="category-item btn btn-info mt-1">science</li>
-        <li class="category-item btn btn-info mt-1">sport</li>
-        <li class="category-item btn btn-info mt-1">travel</li>
-      </ul>
-      <div class="d-flex justify-content-center align-items-center flex-column w-100">
-        <div class="container joke-container text-center p-5 shadow "></div>
-        <div type="submit" class="btn btn-info bg-dark text-white p-3 mt-4 rounded save" id="save">Save Joke</div>
-      </div>
+    <main class="container">
+      <div class="joke-collection row justify-content-center"></div>
     </main>
+
     <footer class="w-100 mt-4">
       <ul class="d-flex justify-content-center align-items-center w-25 m-auto">
         <li class="d-flex justify-content-center align-items-center">
@@ -69,7 +49,6 @@
       </ul>
     </footer>
 
-
     <script>
       // Your web app's Firebase configuration
       var firebaseConfig = {
@@ -86,7 +65,7 @@
       const db = firebase.firestore()
       db.settings({ timestampInSnapshots: true })
     </script>
-    <script src="assets/js/main.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 
 </html>
