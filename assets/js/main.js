@@ -22,7 +22,7 @@ const displayJoke = async cat => {
   }
 }
 
-(function getCategory()  {
+(function getCategory() {
   const categoryList = document.querySelectorAll('.category-item')
   categoryList.forEach(item => {
     item.addEventListener('click', () => {
@@ -34,8 +34,27 @@ const displayJoke = async cat => {
 const storeJoke = (joke) => {
   const saveButton = document.querySelector('#save')
   saveButton.addEventListener('click', () => {
-    db.collection('starjokes').add ({
+    db.collection('starjokes').add({
       joke: joke
     });
   })
+}
+
+
+db.collection('starjokes').get().then((snapshot) => {
+  snapshot.docs.forEach(doc => {
+    renderJoke(doc)
+  });
+})
+
+const renderJoke = (joke) => {
+  const jokeCollection = document.querySelector('.joke-collection')
+  console.log(joke)
+  let div = document.createElement('div')
+
+  div.setAttribute('class', 'card-joke col-6 col-lg-3 card-text text-white p-3 m-2')
+  div.setAttribute('data-id', joke.id)
+  div.textContent = joke.data().joke
+  jokeCollection.appendChild(div)
+  console.log(div)
 }
